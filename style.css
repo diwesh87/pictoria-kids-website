@@ -478,10 +478,6 @@ section { padding: 96px 0; }
   padding: 72px 32px;
   color: var(--text-on-primary);
 }
-:root[data-theme="dark"] .final-cta,
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .final-cta { color: #1c1333; }
-}
 .final-cta h2 { color: inherit; margin-bottom: 14px; }
 .final-cta p { color: inherit; opacity: 0.88; margin: 0 auto 32px; }
 .final-cta .hero-actions { justify-content: center; }
@@ -543,7 +539,11 @@ footer .copyright { color: var(--text-muted); font-size: 0.85rem; width: 100%; m
 }
 
 /* ---- Legal page ---- */
-.legal .wrap { max-width: 760px; padding-top: 56px; padding-bottom: 90px; }
+/* Scoped to the <main> element specifically — `.legal .wrap` alone also
+   matches the site-nav's and footer's .wrap divs (both are descendants of
+   <body class="legal"> too), which blew up the sticky nav's height and made
+   it overlap the content below it. */
+.legal main.wrap { max-width: 760px; padding-top: 56px; padding-bottom: 90px; }
 .legal h1 { font-size: 2.1rem; margin-bottom: 6px; }
 .legal .updated { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 28px; }
 .legal .lede { color: var(--text); font-size: 1.05rem; margin-bottom: 34px; }
