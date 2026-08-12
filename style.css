@@ -499,9 +499,10 @@ footer .wrap {
   flex-wrap: wrap;
   gap: 16px;
 }
-footer .foot-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; }
+footer .foot-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; white-space: nowrap; }
 footer .foot-brand img { height: 24px; }
-footer nav { display: flex; gap: 26px; font-weight: 700; font-size: 0.9rem; color: var(--text-muted); }
+footer nav { display: flex; flex-wrap: wrap; gap: 12px 26px; font-weight: 700; font-size: 0.9rem; color: var(--text-muted); }
+footer nav a { white-space: nowrap; }
 footer nav a:hover { color: var(--primary); }
 footer .copyright { color: var(--text-muted); font-size: 0.85rem; width: 100%; margin-top: 10px; }
 
@@ -536,6 +537,15 @@ footer .copyright { color: var(--text-muted); font-size: 0.85rem; width: 100%; m
   .worlds-grid { grid-template-columns: repeat(2, 1fr); }
   section { padding: 64px 0; }
   .hero { padding: 56px 0 40px; }
+
+  /* Nav bar was wrapping "Pictoria Kids" and "Get the app" onto two lines
+     each at narrow widths, ballooning the sticky bar's height. Shrink
+     everything down and keep it on one line instead. */
+  .site-nav .wrap { height: auto; min-height: 64px; padding: 10px 20px; gap: 10px; }
+  .brand { font-size: 0.98rem; white-space: nowrap; gap: 8px; }
+  .brand img { height: 26px; }
+  .theme-toggle { width: 36px; height: 36px; flex: none; }
+  .nav-cta { padding: 9px 14px; font-size: 0.78rem; white-space: nowrap; flex: none; }
 }
 
 /* ---- Legal page ---- */
