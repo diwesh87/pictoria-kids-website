@@ -523,8 +523,116 @@ footer .copyright { color: var(--text-muted); font-size: 0.85rem; width: 100%; m
 }
 .reveal-up.in-view { opacity: 1; transform: translateY(0); }
 
+/* ---- Expert Approved ---- */
+.expert-note { margin: -12px 0 26px; }
+.expert-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 10px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent) 20%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  color: var(--text);
+  font-weight: 800;
+  font-size: 0.86rem;
+  line-height: 1.2;
+}
+.expert-pill svg {
+  width: 18px; height: 18px; flex: none;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.expert-note p { margin-top: 8px; font-size: 0.86rem; color: var(--text-muted); font-weight: 600; }
+
+.trust-strip {
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+}
+.trust-strip .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 30px;
+  padding-block: 16px;
+  font-weight: 800;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+.trust-strip span { display: inline-flex; align-items: center; gap: 8px; }
+.trust-strip span::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+.expert-panel {
+  background:
+    radial-gradient(60% 80% at 85% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
+    radial-gradient(50% 70% at 0% 100%, color-mix(in srgb, var(--primary-light) 16%, transparent), transparent 70%),
+    var(--bg-deep);
+  border-radius: var(--radius-lg);
+  padding: 64px 48px 44px;
+}
+.expert-panel .section-head { margin-bottom: 40px; max-width: 700px; }
+.expert-primary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.expert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  text-align: center;
+  box-shadow: 0 18px 36px -22px rgba(var(--shadow-color), 0.35);
+}
+.expert-card .badge {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--chip-soft);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+  font-size: 1.7rem;
+}
+.expert-card h3 { font-size: 1.12rem; }
+.expert-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+.expert-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.expert-foot {
+  margin: 28px auto 0;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.cta-sub { margin: 18px auto 0; font-weight: 700; font-size: 0.9rem; opacity: 0.85; }
+
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
+  .expert-primary { grid-template-columns: 1fr; }
+  .expert-panel { padding: 44px 26px 32px; }
   .hero .wrap { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .worlds-grid { grid-template-columns: repeat(3, 1fr); }
@@ -537,6 +645,10 @@ footer .copyright { color: var(--text-muted); font-size: 0.85rem; width: 100%; m
   .worlds-grid { grid-template-columns: repeat(2, 1fr); }
   section { padding: 64px 0; }
   .hero { padding: 56px 0 40px; }
+  .expert-panel { padding: 36px 18px 26px; }
+  .expert-pill { font-size: 0.8rem; }
+  .trust-strip .wrap { gap: 6px 20px; font-size: 0.8rem; }
+  .expert-card { padding: 22px 18px; }
 
   /* Nav bar was wrapping "Pictoria Kids" and "Get the app" onto two lines
      each at narrow widths, ballooning the sticky bar's height. Shrink

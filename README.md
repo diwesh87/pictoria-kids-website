@@ -1,6 +1,6 @@
 # Pictoria Kids — Website
 
-Marketing landing page for [Pictoria Kids](https://github.com/diwesh87/pictoria-kids), a progressive-reveal guessing game for kids ages 4–8.
+Marketing landing page for [Pictoria Kids](https://github.com/diwesh87/pictoria-kids), a progressive-reveal guessing game for children ages 6–12 (Expert Approved on Google Play).
 
 Static site, no build step:
 
